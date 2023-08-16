@@ -1,5 +1,2 @@
-package com.tarefas.entities;
-
-public enum Status {
-    ATIVO, INATIVO
+package com.tarefas.entities;public enum Status {
 }
