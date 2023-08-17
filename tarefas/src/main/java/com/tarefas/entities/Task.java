@@ -1,7 +1,10 @@
 package com.tarefas.entities;
 
+
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tasks")
@@ -17,7 +20,11 @@ public class Task {
     private Long id;
     private String title;
     private String description;
+    @Enumerated(EnumType.STRING)
     private Status status;
-    private Category category;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category categories;
+
 
 }

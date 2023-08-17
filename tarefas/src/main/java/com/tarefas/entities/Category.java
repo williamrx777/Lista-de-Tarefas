@@ -1,9 +1,10 @@
 package com.tarefas.entities;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
+
 
 @Entity
 @Table(name = "categorias")
@@ -17,9 +18,8 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String name;
+    @Enumerated(EnumType.STRING)
     private Status status;
-    @OneToMany
-    @JoinColumn(name = "taks_id")
-    private List<Task> tasks;
 
 }
